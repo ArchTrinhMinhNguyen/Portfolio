@@ -133,7 +133,7 @@ input[type=tel]:focus {
   margin-right: 5px;
 }
 .btn-main:hover, .btn-small:hover, .btn-transparent:hover {
-  background: #353240;
+  background: #515151;
   color: #fff;
 }
 
