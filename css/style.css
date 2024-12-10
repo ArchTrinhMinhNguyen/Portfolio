@@ -2668,8 +2668,8 @@ ul.dropdown-menu li {
 
 /* Giảm khoảng cách giữa các section */
 .service, .service-arrow {
-  margin-top: 30px;  /* Giảm khoảng cách trên */
-  margin-bottom: 30px; /* Giảm khoảng cách dưới */
+  margin-top: 10px;  /* Giảm khoảng cách trên */
+  margin-bottom: 10px; /* Giảm khoảng cách dưới */
 }
 
 /* Giảm khoảng cách giữa các service-item trong service-arrow */
