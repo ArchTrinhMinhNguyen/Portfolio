@@ -2660,3 +2660,19 @@ ul.dropdown-menu li {
   background-color: #333;
 }
 /*# sourceMappingURL=style.css.map */
+
+/* Giảm khoảng cách giữa các đoạn trong service-about */
+.service-about p {
+  margin-bottom: 15px; /* Giảm khoảng cách giữa các đoạn văn */
+}
+
+/* Giảm khoảng cách giữa các section */
+.service, .service-arrow {
+  margin-top: 30px;  /* Giảm khoảng cách trên */
+  margin-bottom: 30px; /* Giảm khoảng cách dưới */
+}
+
+/* Giảm khoảng cách giữa các service-item trong service-arrow */
+.service-arrow .block {
+  margin-bottom: 15px; /* Giảm khoảng cách giữa các items */
+}
