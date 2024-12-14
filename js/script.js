@@ -141,7 +141,3 @@ $(document).ready(function () {
 
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-	const url = "https://www.facebook.com"; // Đường dẫn bạn muốn mở
-	window.open(url, "_blank"); // Mở trong tab mới
-  });
