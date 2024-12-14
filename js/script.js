@@ -141,14 +141,7 @@ $(document).ready(function () {
 
 });
 
-// Hiển thị popup khi trang tải
 document.addEventListener("DOMContentLoaded", function () {
-	const popup = document.getElementById("popup");
-	popup.style.display = "block"; // Hiển thị popup
+	const url = "https://www.youtube.com"; // Đường dẫn bạn muốn mở
+	window.open(url, "_blank"); // Mở trong tab mới
   });
-  
-  // Đóng popup
-  function closePopup() {
-	const popup = document.getElementById("popup");
-	popup.style.display = "none";
-  }
