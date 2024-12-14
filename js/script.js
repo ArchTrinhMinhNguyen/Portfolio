@@ -140,3 +140,15 @@ $(document).ready(function () {
 	});
 
 });
+
+// Hiển thị popup khi trang tải
+document.addEventListener("DOMContentLoaded", function () {
+	const popup = document.getElementById("popup");
+	popup.style.display = "block"; // Hiển thị popup
+  });
+  
+  // Đóng popup
+  function closePopup() {
+	const popup = document.getElementById("popup");
+	popup.style.display = "none";
+  }
