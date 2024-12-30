@@ -262,7 +262,7 @@ input[type=tel]:focus {
 }
 
 .section-sm {
-  padding: 70px 0;
+  padding: 10px 0;
 }
 
 .title {
@@ -2675,4 +2675,53 @@ ul.dropdown-menu li {
 /* Giảm khoảng cách giữa các service-item trong service-arrow */
 .service-arrow .block {
   margin-bottom: 5px; /* Giảm khoảng cách giữa các items */
+}
+.custom-title {
+  text-align: left; /* Căn tiêu đề sang trái */
+  margin: 20px 0; /* Tạo khoảng cách trên dưới */
+}
+
+.custom-title h1 {
+  font-size: 32px; /* Kích thước tiêu đề */
+  font-weight: bold; /* Chữ in đậm */
+  color: #333; /* Màu chữ */
+}.project-content h2 {
+  font-size: 28px; /* Kích thước chữ */
+  font-weight: bold; /* Độ đậm của chữ */
+  margin-bottom: 0px; /* Khoảng cách phía dưới */
+}.project-content h2 {
+  margin-bottom: 0px; /* Điều chỉnh để tiêu đề gần hơn với nội dung tiếp theo */
+}
+
+.portfolio-single-slider img {
+  margin-top: 0; /* Đảm bảo không có khoảng cách trên hình ảnh */
+}
+
+.portfolio-single-page {
+  margin-top: 0;
+  padding-top: 0px; /* Tinh chỉnh khoảng cách nếu cần */
+}.project-content h2 {
+  margin-bottom: 0; /* Loại bỏ khoảng cách dưới tiêu đề */
+}
+
+.portfolio-single-slider {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.portfolio-single-slider img {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.portfolio-single-page {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.container {
+  margin-top: 0;
+  padding-top: 0;
+}.custom-title {
+  color: #515151; /* Giống màu chữ nội dung khác */
 }
