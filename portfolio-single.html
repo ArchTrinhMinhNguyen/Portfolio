@@ -41,7 +41,6 @@
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
-</head>
 
 <body id="body">
 
@@ -132,6 +131,51 @@
 
   </div>
 </section>
+
+<!-- Portfolio Start -->
+<section class="portfolio-work">
+  <div class="container">
+    <div class="row shuffle-wrapper">
+      <!-- Ảnh 1 -->
+      <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item">
+        <a href="images/portfolio/Arch.DoiHong/a.jpg" class="image-popup">
+          <img src="images/portfolio/Arch.DoiHong/a.jpg" class="img-fluid" alt="Image 1">
+        </a>
+      </div>
+      <!-- Ảnh 2 -->
+      <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item">
+        <a href="images/portfolio/image2.jpg" class="image-popup">
+          <img src="images/portfolio/Arch.DoiHong/a.jpg" class="img-fluid" alt="Image 2">
+        </a>
+      </div>
+      <!-- Ảnh 3 -->
+      <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item">
+        <a href="images/portfolio/Arch.DoiHong/2.jpg" class="image-popup">
+          <img src="images/portfolio/Arch.DoiHong/2.jpg" class="img-fluid" alt="Image 3">
+        </a>
+      </div>
+      <!-- Ảnh 4 -->
+      <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item">
+        <a href="images/portfolio/image4.jpg" class="image-popup">
+          <img src="images/portfolio/image4.jpg" class="img-fluid" alt="Image 4">
+        </a>
+      </div>
+      <!-- Ảnh 5 -->
+      <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item">
+        <a href="images/portfolio/image5.jpg" class="image-popup">
+          <img src="images/portfolio/image5.jpg" class="img-fluid" alt="Image 5">
+        </a>
+      </div>
+      <!-- Ảnh 6 -->
+      <div class="col-lg-4 col-sm-6 portfolio-item shuffle-item">
+        <a href="images/portfolio/image6.jpg" class="image-popup">
+          <img src="images/portfolio/image6.jpg" class="img-fluid" alt="Image 6">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="related-projects section-sm bg-gray">
   <div class="container">
     <div class="row">
@@ -194,6 +238,17 @@
 
     <script src="js/script.js"></script>
 
+    <script>
+      $(document).ready(function () {
+        $('.image-popup').magnificPopup({
+          type: 'image',
+          gallery: {
+            enabled: true // Kích hoạt chế độ trình chiếu nhiều ảnh
+          }
+        });
+      });
+    </script>
+    
     </body>
 
     </html>
