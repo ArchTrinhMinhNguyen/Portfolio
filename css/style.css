@@ -2725,3 +2725,12 @@ ul.dropdown-menu li {
 }.custom-title {
   color: #515151; /* Giống màu chữ nội dung khác */
 }
+
+.paragraph-style {
+  font-family: 'Volkhov', serif; /* Sử dụng font Volkhov */
+  font-size: 16px; /* Kích thước chữ */
+  font-weight: 400; /* Độ đậm chữ thông thường */
+  font-style: italic; /* Chữ nghiêng */
+  color: rgb(33, 37, 41); /* Màu chữ */
+  text-align: left; /* Căn trái */
+}
