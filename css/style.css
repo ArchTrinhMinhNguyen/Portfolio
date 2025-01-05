@@ -2726,8 +2726,6 @@ ul.dropdown-menu li {
   color: #515151; /* Giống màu chữ nội dung khác */
 }
 
-
-
 .navigation .navbar .navbar-nav li.active > a {
   text-decoration: none !important; /* Loại bỏ dấu gạch chân */
   color: #5C5C5C; /* Giữ màu sắc mong muốn */
