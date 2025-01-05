@@ -49,7 +49,7 @@ h4 {
 }
 
 p {
-  color: #7B7B7B;
+  color: #515151;
   font-size: 15px;
   font-family: "Roboto", sans-serif;
   line-height: 1.7;
@@ -701,7 +701,7 @@ header .navbar-default .navbar-nav li a:hover {
 }
 .navigation .navbar .navbar-nav li.active > a {
   text-decoration: underline;
-  color: #515151;
+  color: #5C5C5C;
 }
 .navigation .navbar .dropdown-menu {
   border-radius: 0;
@@ -1128,7 +1128,7 @@ ul.dropdown-menu li {
 }
 .testimonial .block p {
   padding-top: 50px;
-  color: #7B7B7B;
+  color: #515151;
 }
 .testimonial .counter-box li {
   width: 50%;
@@ -2726,12 +2726,12 @@ ul.dropdown-menu li {
   color: #515151; /* Giống màu chữ nội dung khác */
 }
 
-.navbar-nav .nav-item.active .nav-link {
-  text-decoration: none; /* Loại bỏ gạch chân khi đây là trang hiện tại */
-  color: inherit; /* Đảm bảo màu sắc không thay đổi */
-}
 
-.navbar-nav .nav-link:focus, 
-.navbar-nav .nav-link:hover {
-  text-decoration: none; /* Loại bỏ gạch chân khi di chuột hoặc nhấn */
+
+.navigation .navbar .navbar-nav li.active > a {
+  text-decoration: none !important; /* Loại bỏ dấu gạch chân */
+  color: #5C5C5C; /* Giữ màu sắc mong muốn */
+}
+a:-webkit-any-link {
+  text-decoration: none; /* Loại bỏ dấu gạch chân mặc định */
 }
