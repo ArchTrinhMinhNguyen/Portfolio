@@ -2733,3 +2733,347 @@ ul.dropdown-menu li {
 a:-webkit-any-link {
   text-decoration: none; /* Loại bỏ dấu gạch chân mặc định */
 }
+/* ===== Carousel 5-up Center ===== */
+#nguyen-carousel .section-title { margin-bottom: 6px; }
+
+.carousel-5up .slick-slide {
+  padding: 0 14px;
+  transition: transform .45s ease, opacity .45s ease, box-shadow .45s ease;
+}
+
+/* Ảnh fill khung, bo góc, đổ bóng */
+.carousel-5up img {
+  width: 100%;
+  height: 520px;              /* chỉnh chiều cao bạn muốn */
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+
+/* Mặc định mờ (xa hơn 2 bước) */
+.carousel-5up .slick-slide { opacity: .25; transform: scale(.82) rotateY(0deg); }
+
+/* Gần trung tâm 2 bước (A) */
+.carousel-5up .slick-slide.is-prev2,
+.carousel-5up .slick-slide.is-next2 { opacity: .5; transform: scale(.86); }
+
+/* Gần trung tâm 1 bước (B) */
+.carousel-5up .slick-slide.is-prev1,
+.carousel-5up .slick-slide.is-next1 { opacity: .75; transform: scale(.92); }
+
+/* Trung tâm (C) */
+.carousel-5up .slick-slide.slick-center { opacity: 1; transform: scale(1); }
+
+/* Arrow đẹp hơn một chút */
+.carousel-5up .slick-prev:before,
+.carousel-5up .slick-next:before { color:#333; font-size:34px; }
+
+/* Responsive */
+@media (max-width: 992px) {
+  .carousel-5up img { height: 420px; }
+}
+@media (max-width: 576px) {
+  .carousel-5up img { height: 360px; }
+}
+/* ===== Override vị trí & style nút mũi tên ===== */
+#nguyen-carousel .slick-prev,
+#nguyen-carousel .slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+#nguyen-carousel .slick-prev { left: 2.2%; }   /* kéo sát về cạnh trái */
+#nguyen-carousel .slick-next { right: 2.2%; }  /* kéo sát về cạnh phải */
+
+#nguyen-carousel .slick-prev:before,
+#nguyen-carousel .slick-next:before {
+  color: #333;
+  font-size: 22px;
+  line-height: 44px;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  #nguyen-carousel .slick-prev { left: 1.2%; }
+  #nguyen-carousel .slick-next { right: 1.2%; }
+}
+/* ===== Override vị trí & style nút mũi tên ===== */
+#nguyen-carousel .slick-prev,
+#nguyen-carousel .slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+#nguyen-carousel .slick-prev { left: 2.2%; }   /* kéo sát về cạnh trái */
+#nguyen-carousel .slick-next { right: 2.2%; }  /* kéo sát về cạnh phải */
+
+#nguyen-carousel .slick-prev:before,
+#nguyen-carousel .slick-next:before {
+  color: #333;
+  font-size: 22px;
+  line-height: 44px;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  #nguyen-carousel .slick-prev { left: 1.2%; }
+  #nguyen-carousel .slick-next { right: 1.2%; }
+}
+
+/* ===== Card giữ đúng tỉ lệ 7:9, auto-scale ===== */
+:root {
+  --cardH: clamp(320px, 62vh, 640px);
+}
+
+.carousel-5up .slick-slide {
+  padding: 0 14px;
+  transition: transform .45s ease, opacity .45s ease, box-shadow .45s ease;
+}
+
+/* Giữ tỉ lệ 7:9 */
+.carousel-5up img {
+  height: var(--cardH);
+  width: calc(var(--cardH) * 7 / 9);
+  aspect-ratio: 7 / 9;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+
+/* Mờ dần theo khoảng cách */
+.carousel-5up .slick-slide { opacity: .25; transform: scale(.82); }
+.carousel-5up .slick-slide.is-prev2,
+.carousel-5up .slick-slide.is-next2 { opacity: .5; transform: scale(.86); }
+.carousel-5up .slick-slide.is-prev1,
+.carousel-5up .slick-slide.is-next1 { opacity: .75; transform: scale(.92); }
+.carousel-5up .slick-slide.slick-center { opacity: 1; transform: scale(1); }
+
+/* Responsive */
+@media (max-width: 1200px) {
+  :root { --cardH: clamp(300px, 58vh, 580px); }
+}
+@media (max-width: 768px) {
+  :root { --cardH: clamp(280px, 54vh, 520px); }
+}
+@media (max-width: 576px) {
+  :root { --cardH: clamp(260px, 50vh, 480px); }
+}
+/* ==== FIX OVERLAP for #nguyen-carousel ==== */
+
+/* Cho phần hình scale tràn ra ngoài mà không bị cắt */
+
+#nguyen-carousel .slick-track { display: flex; align-items: center; }
+
+/* Tăng khoảng cách giữa các slide để bớt chạm nhau */
+#nguyen-carousel .slick-slide { padding: 0 22px; }  /* nếu còn sát, tăng lên 26px, 28px */
+
+/* Ưu tiên lớp chồng: A < B < C */
+#nguyen-carousel .slick-slide { position: relative; z-index: 1; }
+#nguyen-carousel .slick-slide.is-prev2,
+#nguyen-carousel .slick-slide.is-next2 { z-index: 2; }
+#nguyen-carousel .slick-slide.is-prev1,
+#nguyen-carousel .slick-slide.is-next1 { z-index: 3; }
+#nguyen-carousel .slick-slide.slick-center { z-index: 5; }
+
+/* (Tùy chọn) Giảm scale của slide hai bên để bớt đè lên trung tâm */
+#nguyen-carousel .slick-slide.is-prev2,
+#nguyen-carousel .slick-slide.is-next2 { transform: scale(.84) !important; }
+#nguyen-carousel .slick-slide.is-prev1,
+#nguyen-carousel .slick-slide.is-next1 { transform: scale(.90) !important; }
+#nguyen-carousel .slick-slide.slick-center { transform: scale(1) !important; }
+
+/* ====== Layout tổng & giới hạn vùng hiển thị ====== */
+
+/* Giữ slider đúng giữa trang */
+#nguyen-carousel .carousel-5up{
+  position: relative;
+  max-width: min(1200px, 92vw); /* center + giới hạn bề rộng tổng */
+  margin: 0 auto;               /* canh giữa */
+  perspective: 1600px;          /* cho hiệu ứng nghiêng */
+}
+
+/* Chừa 2 “gutter” hai bên để làm vùng trống và đặt arrow */
+:root{
+  --arrowW: 44px;                          /* kích thước nút mũi tên */
+  --sideGutter: clamp(72px, 10vw, 160px);  /* khoảng trống hai bên (khung xanh) */
+}
+
+/* Chỉ cho ảnh hiển thị trong vùng giữa 2 mũi tên */
+#nguyen-carousel .slick-list{
+  padding: 0 calc(var(--sideGutter) + var(--arrowW)); /* chừa chỗ cho arrow */
+  overflow: hidden;  /* cắt phần tràn ra ngoài mốc 2 mũi tên */
+}
+#nguyen-carousel .slick-track{ display:flex; align-items:center; }
+
+/* ====== Mũi tên đặt vào trong 2 gutter ====== */
+#nguyen-carousel .slick-prev,
+#nguyen-carousel .slick-next{
+  position:absolute;
+  top:50%; transform:translateY(-50%);
+  z-index:5;
+  width:var(--arrowW); height:var(--arrowW);
+  border-radius:8px;
+  background: rgba(255,255,255,.95);
+  border:1px solid rgba(0,0,0,.08);
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+#nguyen-carousel .slick-prev{ left: calc(var(--sideGutter) / 2 - var(--arrowW)/2); }
+#nguyen-carousel .slick-next{ right: calc(var(--sideGutter) / 2 - var(--arrowW)/2); }
+
+#nguyen-carousel .slick-prev:before,
+#nguyen-carousel .slick-next:before{
+  color:#333; font-size:20px; line-height:var(--arrowW); opacity:1;
+}
+
+/* ====== Tỉ lệ ảnh 7:9 và hiệu ứng A/B/C ====== */
+:root{ --cardH: clamp(320px, 62vh, 640px); }
+
+#nguyen-carousel .slick-slide{ 
+  padding: 0 22px;
+  position: relative;
+  transition: transform .5s ease, opacity .5s ease, box-shadow .5s ease;
+  will-change: transform, opacity;
+  z-index:1;
+}
+
+#nguyen-carousel .slick-slide img{
+  height: var(--cardH);
+  width: calc(var(--cardH) * 7 / 9); /* giữ đúng tỉ lệ 700x900 (7:9) */
+  aspect-ratio: 7 / 9;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+
+/* Mặc định (xa > 2 bước): mờ và nhỏ */
+#nguyen-carousel .slick-slide{ opacity:.25; transform: scale(.82) rotateY(0deg); }
+
+/* A (±2): mờ 0.5 + nghiêng nhiều hơn */
+#nguyen-carousel .slick-slide.is-prev2{  opacity:.5;  transform: translateX(-2%) scale(.86) rotateY(16deg);  z-index:2;}
+#nguyen-carousel .slick-slide.is-next2{  opacity:.5;  transform: translateX( 2%) scale(.86) rotateY(-16deg); z-index:2;}
+
+/* B (±1): mờ 0.75 + nghiêng nhẹ */
+#nguyen-carousel .slick-slide.is-prev1{  opacity:.75; transform: translateX(-1%) scale(.92) rotateY(10deg);  z-index:3;}
+#nguyen-carousel .slick-slide.is-next1{  opacity:.75; transform: translateX( 1%) scale(.92) rotateY(-10deg); z-index:3;}
+
+/* C (center): rõ 100%, không nghiêng, nổi trên cùng */
+#nguyen-carousel .slick-slide.slick-center{ opacity:1; transform: scale(1) rotateY(0deg); z-index:5; }
+
+/* Responsive tinh chỉnh khoảng trống & chiều cao */
+@media (max-width: 992px){
+  :root{ --sideGutter: clamp(56px, 8vw, 120px); --cardH: clamp(300px, 58vh, 580px); }
+}
+@media (max-width: 576px){
+  :root{ --sideGutter: clamp(40px, 7vw, 96px);  --cardH: clamp(260px, 50vh, 480px); }
+}
+/* ====== CENTER + GUTTER + ONLY A/B/C VISIBLE ====== */
+
+:root{
+  --arrowW: 44px;                           /* kích thước nút mũi tên */
+  --sideGutter: clamp(72px, 10vw, 160px);   /* khoảng trống hai bên (giữa mũi tên & khung slider) */
+}
+
+#nguyen-carousel .carousel-5up{
+  position: relative;
+  max-width: min(1200px, 92vw);  /* GIỮ KHỐI Ở CHÍNH GIỮA TRANG */
+  margin: 0 auto;                /* center container */
+  perspective: 1600px;
+}
+
+/* chỉ hiển thị trong vùng giữa 2 mũi tên */
+#nguyen-carousel .carousel-5up .slick-list{
+  padding: 0 calc(var(--sideGutter) + var(--arrowW)) !important;
+  overflow: hidden !important;     /* cắt phần tràn ra 2 bên */
+}
+#nguyen-carousel .carousel-5up .slick-track{
+  display:flex; align-items:center;
+}
+
+/* ===== MŨI TÊN NẰM GIỮA 2 GUTTER ===== */
+#nguyen-carousel .slick-prev,
+#nguyen-carousel .slick-next{
+  position:absolute; top:50%; transform:translateY(-50%);
+  z-index:5;
+  width:var(--arrowW); height:var(--arrowW);
+  border-radius:8px;
+  background: rgba(255,255,255,.95);
+  border:1px solid rgba(0,0,0,.08);
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+#nguyen-carousel .slick-prev{ left: calc(var(--sideGutter) / 2 - var(--arrowW) / 2); }
+#nguyen-carousel .slick-next{ right: calc(var(--sideGutter) / 2 - var(--arrowW) / 2); }
+#nguyen-carousel .slick-prev:before,
+#nguyen-carousel .slick-next:before{
+  color:#333; font-size:20px; line-height:var(--arrowW); opacity:1;
+}
+
+/* ===== TỈ LỆ 7:9, ĐỂ SLICK QUYẾT ĐỊNH CHIỀU RỘNG SLIDE ===== */
+#nguyen-carousel .carousel-5up .slick-slide{
+  padding: 0 18px;               /* gap giữa các thẻ */
+  position: relative;
+  opacity: 0;                    /* ẩn tất cả mặc định (ngoài ±2 sẽ không thấy) */
+  transform: scale(.84) rotateY(0deg);
+  transition: transform .5s ease, opacity .5s ease, box-shadow .5s ease;
+  will-change: transform, opacity;
+  z-index:1;
+}
+#nguyen-carousel .carousel-5up .slick-slide img{
+  display:block;
+  width: 100%;                   /* rất quan trọng: để slick canh width = list/5 */
+  height: auto;
+  aspect-ratio: 7 / 9;           /* đúng tỉ lệ 700x900 */
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+
+/* A (±2) – nghiêng mạnh hơn */
+#nguyen-carousel .carousel-5up .slick-slide.is-prev2{
+  opacity:.5; transform: scale(.86) rotateY(16deg);
+  z-index:2; transform-origin: center right;
+}
+#nguyen-carousel .carousel-5up .slick-slide.is-next2{
+  opacity:.5; transform: scale(.86) rotateY(-16deg);
+  z-index:2; transform-origin: center left;
+}
+
+/* B (±1) – nghiêng nhẹ */
+#nguyen-carousel .carousel-5up .slick-slide.is-prev1{
+  opacity:.75; transform: scale(.92) rotateY(10deg);
+  z-index:3; transform-origin: center right;
+}
+#nguyen-carousel .carousel-5up .slick-slide.is-next1{
+  opacity:.75; transform: scale(.92) rotateY(-10deg);
+  z-index:3; transform-origin: center left;
+}
+
+/* C (center) */
+#nguyen-carousel .carousel-5up .slick-slide.slick-center{
+  opacity:1; transform: scale(1) rotateY(0deg); z-index:5;
+}
+
+/* Responsive tinh chỉnh gutter nếu cần */
+@media (max-width: 992px){
+  :root{ --sideGutter: clamp(56px, 8vw, 120px); }
+}
+@media (max-width: 576px){
+  :root{ --sideGutter: clamp(40px, 7vw, 96px); }
+}
+#nguyen-carousel .carousel-5up .slick-slide.is-prev2,
+#nguyen-carousel .carousel-5up .slick-slide.is-next2 { opacity:0 !important; pointer-events:none; }
