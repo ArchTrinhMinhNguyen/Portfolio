@@ -18,7 +18,7 @@
   <!-- Your CSS -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Không cho slick-list có padding để JS set centerPadding -->
+  <!-- Không để slick-list tự có padding; padding sẽ do JS set qua centerPadding -->
   <style>#nguyen-carousel .carousel-5up .slick-list{padding:0!important;}</style>
 </head>
 
@@ -42,18 +42,10 @@
 
           <div class="collapse navbar-collapse ml-auto" id="navbarsExample09">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item @@portfolio">
-                <a class="nav-link" href="portfolio.html">Portfolio</a>
-              </li>
-              <li class="nav-item @@service">
-                <a class="nav-link" href="service.html">Service</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Nguyên</a>
-              </li>
-              <li class="nav-item @@contact">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
+              <li class="nav-item @@portfolio"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+              <li class="nav-item @@service"><a class="nav-link" href="service.html">Service</a></li>
+              <li class="nav-item active"><a class="nav-link" href="index.html">Nguyên</a></li>
+              <li class="nav-item @@contact"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
           </div>
         </nav>
@@ -140,12 +132,12 @@
   </div>
 </section>
 
-<!-- ================= Center Image (giữ nguyên) ================= -->
+<!-- ================= Center Image ================= -->
 <div class="image-container text-center">
   <img src="images/featue-bg2.jpg" alt="Centered Image" style="max-width: 100%; height: auto; margin: 20px 0;">
 </div>
 
-<!-- ================= Skills / Services ================= -->
+<!-- ================= Services / Skills ================= -->
 <section class="service">
   <div class="container">
     <div class="row">
@@ -242,10 +234,10 @@
 <script src="plugins/bootstrap/bootstrap.min.js"></script>
 <script src="plugins/slick/slick.min.js"></script>
 
-<!-- Carousel init: 3 ảnh (A–C–B), vào trang là 1|2|3, vòng 1→10 -->
+<!-- Carousel init: 3 ảnh (A–C–B), vào trang là 1|2|3, tốc độ nhanh hơn -->
 <script>
 (function($){
-  // đọc px từ CSS var (kể cả clamp)
+  // đọc px từ CSS var
   function readCssVarPx(name){
     var el=document.createElement('div');
     el.style.position='absolute'; el.style.visibility='hidden';
@@ -255,7 +247,7 @@
   }
   function centerPad(){ return Math.round(readCssVarPx('--sideGutter')+readCssVarPx('--arrowW'))+'px'; }
 
-  // gắn A/B cho cả slide clone (chuẩn hoá index mod n)
+  // gắn A/B cho cả slide clone (chuẩn hoá index)
   function tagNeighbors($root){
     var n=$root.find('.slick-slide:not(.slick-cloned)').length;
     var $cur=$root.find('.slick-current'); if(!n||!$cur.length) return;
@@ -282,21 +274,25 @@
     $c.slick({
       centerMode: true,
       centerPadding: centerPad(),
-      slidesToShow: 3,            // A - C - B
-      initialSlide: 1,            // vào trang: trái=1, giữa=2, phải=3
+      slidesToShow: 3,               // A - C - B
+      initialSlide: 1,               // vào trang: trái=1, giữa=2, phải=3
       infinite: true,
       swipeToSlide: true,
       focusOnSelect: true,
       arrows: true,
       dots: false,
-      speed: 500,
-      cssEase: 'ease',
+
+      /* ==== tốc độ nhanh hơn ==== */
+      speed: 220,                    // từ 500 -> 220ms
+      cssEase: 'ease-out',
+      waitForAnimate: false,         // cho phép bấm/ vuốt liên tiếp
+
       prevArrow: '<button type="button" class="slick-prev" aria-label="Previous"><i class="ion-ios-arrow-left"></i></button>',
       nextArrow: '<button type="button" class="slick-next" aria-label="Next"><i class="ion-ios-arrow-right"></i></button>',
       responsive: [
-        { breakpoint:1200, settings:{ slidesToShow:3, centerMode:true, centerPadding:centerPad(), initialSlide:1 } },
-        { breakpoint: 992, settings:{ slidesToShow:3, centerMode:true, centerPadding:centerPad(), initialSlide:1 } },
-        { breakpoint: 576, settings:{ slidesToShow:1, centerMode:true, centerPadding:centerPad(), initialSlide:1 } }
+        { breakpoint:1200, settings:{ slidesToShow:3, centerMode:true, centerPadding:centerPad(), initialSlide:1, speed:220, cssEase:'ease-out', waitForAnimate:false } },
+        { breakpoint: 992, settings:{ slidesToShow:3, centerMode:true, centerPadding:centerPad(), initialSlide:1, speed:220, cssEase:'ease-out', waitForAnimate:false } },
+        { breakpoint: 576, settings:{ slidesToShow:1, centerMode:true, centerPadding:centerPad(), initialSlide:1, speed:220, cssEase:'ease-out', waitForAnimate:false } }
       ]
     });
 
@@ -311,7 +307,6 @@
 <script src="plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
 <script src="plugins/shuffle/shuffle.min.js"></script>
 <script src="plugins/SyoTimer/jquery.syotimer.min.js"></script>
-<!-- Google Map (nếu cần) -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
 <script src="plugins/google-map/map.js"></script>
 <script src="js/script.js"></script>
